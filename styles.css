@@ -1,0 +1,6 @@
+@keyframes slideAnimation {
+    0%, 25% { left: 0; }
+    30%, 55% { left: -100%; }
+    60%, 85% { left: -200%; }
+    90%, 100% { left: -300%; }
+}

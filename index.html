@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideAnimation {
+    0%, 25% { left: 0; }
+    30%, 55% { left: -100%; }
+    60%, 85% { left: -200%; }
+    90%, 100% { left: -300%; }
+}
+    </style>
+</head>
+<body style="background-color: #0A0F12;  color: white;">
+    
+    <nav id="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; flex-wrap: wrap; font-family: Arial, sans-serif; position: relative; z-index: 1000;">
+
+        <div class="logo">
+            <img src="WhatsApp Image 2024-09-28 at 2.11.06 PM.jpeg" alt="Logo" style="max-height: 50px; border-radius: 25%;">
+        </div>
+        <button id="menu-toggle" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; font-family: Arial, sans-serif; color: white;">☰</button>
+        <ul id="nav-menu" style="list-style-type: none; display: flex; gap: 1rem; margin: 0; padding: 0; flex-wrap: wrap; font-family: Arial, sans-serif; justify-content: flex-end; align-items: center;">
+            <li><a href="#home" style="text-decoration: none; color: white; font-family: Arial, sans-serif; padding: 0.5rem 1rem; display: inline-block; box-sizing: border-box; font-size: 1.2rem;">Home</a></li>
+            <li><a href="#about" style="text-decoration: none; color: white; font-family: Arial, sans-serif; padding: 0.5rem 1rem; display: inline-block; box-sizing: border-box; font-size: 1.2rem;"> About Us</a></li>
+            <li><a href="#products" style="text-decoration: none; color: white; font-family: Arial, sans-serif; padding: 0.5rem 1rem; display: inline-block; box-sizing: border-box; font-size: 1.2rem;">Products</a></li>
+            <li><a href="#contact" style="text-decoration: none; color: white; font-family: Arial, sans-serif; padding: 0.5rem 1rem; display: inline-block; box-sizing: border-box; font-size: 1.2rem;">Contact</a></li>
+            <div class="search-container" style="margin-left: 1rem; display: flex; align-items: center;">
+                <input type="text" id="search-input" placeholder="Search..." style="padding: 0.5rem; border-radius: 4px; border: 1px solid #2A3F4D; background-color: #0A0F12; color: white; font-family: Arial, sans-serif; font-size: 1.2rem; transition: border-color 0.3s; outline: none;">
+                <button type="submit" id="search-button" style="background: none; border: none; cursor: pointer; margin-left: -30px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button type="button" id="clear-button" style="display: none; background: none; border: none; cursor: pointer; margin-left: 5px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <script>
+                const searchInput = document.getElementById('search-input');
+                const clearButton = document.getElementById('clear-button');
+
+                searchInput.addEventListener('input', function() {
+                    clearButton.style.display = this.value ? 'block' : 'none';
+                });
+
+                clearButton.addEventListener('click', function() {
+                    searchInput.value = '';
+                    this.style.display = 'none';
+                });
+            </script>
+            <style>
+                .search-container input:hover, .search-container input:focus {
+                    border-color: #4A6F8D;
+                }
+                .search-container button:hover {
+                    background-color: #1A2F3D;
+                    border-color: #4A6F8D;
+                }
+            </style>
+        </ul>
+    </nav>
+
+    <div class="hero" style="position: relative; height: 85vh; overflow: hidden; border-radius: 12px;">
+        <div class="slider" style="width: 100%; height: 100%;">
+            <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('portada-optimizar-picking.jpg'); background-size: cover; background-position: center; animation: slideAnimation 20s infinite;">
+            </div>
+            <div class="slide" style="position: absolute; top: 0; left: 100%; width: 100%; height: 100%; background-image: url('heavy-duty-racks-shelving-heavy-loads-medium-loads.1.8.avif'); background-size: cover; background-position: center; animation: slideAnimation 20s infinite 5s;">
+            </div>
+            <div class="slide" style="position: absolute; top: 0; left: 200%; width: 100%; height: 100%; background-image: url('picking-zonas.1.2.avif'); background-size: cover; background-position: center; animation: slideAnimation 20s infinite 10s;">
+            </div>
+            <div class="slide" style="position: absolute; top: 0; left: 300%; width: 100%; height: 100%; background-image: url('1521069899312.jfif'); background-size: cover; background-position: center; animation: slideAnimation 20s infinite 15s;">
+            </div>
+        </div>
+        
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 20px; z-index: 10;">
+            <h2 style="color: white; font-family: Arial, sans-serif; text-align: center; margin-bottom: 20px; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); background-color: #1f23258f; border-radius: 12px; padding: 10px;">Get The Latest <b> <span style="ubder">  Price </span> </b> of Storage rack</h2>
+            <div class="button-container" style="display: flex; gap: 20px;">
+                <button onclick="window.location.href='tel:+919820448738'" style="padding: 15px 25px; font-size: 22px; background-color: #0A0F12; color: white; border: 2px solid white; border-radius: 5px; cursor: pointer; display: flex; align-items: center; width: 50%;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 10px;">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Get Price
+                </button>
+                <button style="padding: 15px 25px; font-size: 22px; background-color: #25D366; color: white; border: none; border-radius: 5px; cursor: pointer; display: flex; align-items: center; width: calc(50% - 20px);" onclick="window.open('https://wa.me/+919820448738', '_blank')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 10px;">
+                        <!-- <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.90-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/> -->
+                    </svg>
+                    WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <section id="about" style="padding: 50px 20px; background-color: #f5f5f5;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #1A2F3D; font-size: 2.5rem; margin-bottom: 30px; text-decoration: underline; text-decoration-color: red;">About Us</h2>
+            <h2 style="text-align: center; color: #1A2F3D; font-size: 2.5rem; margin-bottom: 30px; text-decoration: underline; text-decoration-color: red; "></h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+                <div style="flex: 1; min-width: 300px; padding: 20px;">
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #333;">
+                        Aman Slotted Angles is a leading slotted angles, shelves and storage racks supplier in Mumbai provide complete storage solutions for various industries and shops under a roof. We range of slotted angle racks includes: Angle frame racks, shelves racks, metal storage rack, electronic display rack, departmental store racks and storage racks for various shops and industry. We provide all these rack storage products to the clients at most genuine rates.
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: #333; margin-top: 20px;">
+                        Apart from this, we have Heavy & Light Duty Racking System and we design the framework according to the client need and space accessible. Our racks and compactors framework are utilized for various material taking care of utilization created at all levels in different ventures and parts be it Automobile, Pharmaceutical, Engineering, Hospitality and Catering, Logistics, Supermarkets, Electronics, Retail, Food and Beverages, Agriculture and Seafood, and so on.
+                        We are  providing high quality, durable and 100% customer satisfying products.
+                    </p>
+                </div>
+                <div style="flex: 1; min-width: 300px; padding: 20px;">
+                    <img src="WhatsApp Image 2024-09-28 at 2.11.06 PM.jpeg" alt="Our warehouse solutions" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="products" style="padding: 50px 20px; background-color: #ffffff;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #1A2F3D; font-size: 2.5rem; margin-bottom: 30px; text-decoration: underline; text-decoration-color: red;">Our Products</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                <div style="width: 300px; margin-bottom: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;">
+                    <img src="picking-zonas.1.2.avif" alt="Slotted Angle Rack" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3 style="color: #1A2F3D; margin-bottom: 10px;">Slotted Angle Rack</h3>
+                        <p style="color: #333; font-size: 0.9rem;">Versatile and adjustable storage solution for various industries.</p>
+                    </div>
+                </div>
+                <div style="width: 300px; margin-bottom: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;">
+                    <img src="heavy-duty-racks-shelving-heavy-loads-medium-loads.1.8.avif" alt="Heavy Duty Rack" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3 style="color: #1A2F3D; margin-bottom: 10px;">Heavy Duty Rack</h3>
+                        <p style="color: #333; font-size: 0.9rem;">Robust storage system for heavy loads in warehouses and industries.</p>
+                    </div>
+                </div>
+                <div style="width: 300px; margin-bottom: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;">
+                    <img src="images.png" alt="Mezzanine Floor" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3 style="color: #1A2F3D; margin-bottom: 10px;">Mezzanine Floor</h3>
+                        <p style="color: #333; font-size: 0.9rem;">Space-efficient solution to maximize vertical storage capacity.</p>
+                    </div>
+                </div>
+                <div style="width: 300px; margin-bottom: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;">
+                    <img src="portada-optimizar-picking.jpg" alt="Pallet Rack" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3 style="color: #1A2F3D; margin-bottom: 10px;">Pallet Rack</h3>
+                        <p style="color: #333; font-size: 0.9rem;">Efficient storage system for palletized goods in warehouses.</p>
+                    </div>
+                </div>
+                <div style="width: 300px; margin-bottom: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;">
+                    <img src="heavy-duty-racks-shelving-heavy-loads-medium-loads.1.8.avif" alt="Cantilever Rack" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3 style="color: #1A2F3D; margin-bottom: 10px;">Cantilever Rack</h3>
+                        <p style="color: #333; font-size: 0.9rem;">Ideal for storing long, bulky items such as pipes, lumber, and steel bars.</p>
+                    </div>
+                </div>
+                <div style="width: 300px; margin-bottom: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden;">
+                    <img src="portada-optimizar-picking.jpg" alt="Drive-In Rack" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 15px;">
+                        <h3 style="color: #1A2F3D; margin-bottom: 10px;">Drive-In Rack</h3>
+                        <p style="color: #333; font-size: 0.9rem;">High-density storage solution for large quantities of similar items.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us" style="padding: 50px 20px; background-color: #f5f5f5;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #1A2F3D; font-size: 2.5rem; margin-bottom: 30px; text-decoration: underline; text-decoration-color: red;">Contact Us</h2>
+            <div id="notification" style="display: none; padding: 10px; color: white; text-align: center; margin-bottom: 20px; border-radius: 5px;"></div>
+            <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                <input type="text" id="name" placeholder="Your Name" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <input type="email" id="email" placeholder="Your Email" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                <div style="display: flex; gap: 10px;">
+                    <select id="country-code" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 30%;">
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+81">+81 (Japan)</option>
+                        <!-- Add more country codes as needed -->
+                    </select>
+                    <input type="tel" id="phone" placeholder="Your Phone Number" pattern="[0-9]{10}" title="Please enter a 10-digit phone number" maxlength="10" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 70%;" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                </div>
+                <textarea id="message" placeholder="Your Message" rows="5" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                <button type="submit" style="padding: 10px 20px; background-color: #1A2F3D; color: white; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer style="background-color: #1A2F3D; color: white; padding: 40px 20px; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Quick Links</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="#home" style="color: white; text-decoration: none; line-height: 1.8;">Home</a></li>
+                    <li><a href="#about-us" style="color: white; text-decoration: none; line-height: 1.8;">About Us</a></li>
+                    <li><a href="#our-products" style="color: white; text-decoration: none; line-height: 1.8;">Our Products</a></li>
+                    <li><a href="#contact-us" style="color: white; text-decoration: none; line-height: 1.8;">Contact Us</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Contact Info</h3>
+                <p style="line-height: 1.8;">
+                    123 Warehouse Street<br>
+                    Storage City, SC 12345<br>
+                    Phone: (+91) 9820448738<br>
+                    Email: amanslottedangles@gmail.com
+                </p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Follow Us</h3>
+                <div>
+                    <a href="https://www.facebook.com/amanslottedangles" style="color: white; text-decoration: none; margin: 0 10px; font-size: 1.5rem;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" style="width: 24px; height: 24px;">
+                    </a>
+                    <a href="https://www.twitter.com/amanslottedangles" style="color: white; text-decoration: none; margin: 0 10px; font-size: 1.5rem;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter" style="width: 24px; height: 24px;">
+                    </a>
+                    <a href="https://www.linkedin.com/in/amanslottedangles" style="color: white; text-decoration: none; margin: 0 10px; font-size: 1.5rem;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 24px; height: 24px;">
+                    </a>
+                    <a href="https://www.instagram.com/amanslottedangles" style="color: white; text-decoration: none; margin: 0 10px; font-size: 1.5rem;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 24px; height: 24px;">
+                    </a>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Developer Info</h3>
+                <p style="line-height: 1.8;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; margin: 0 auto 15px;">
+                        <img src="WhatsApp Image 2024-09-28 at 2.11.06 PM.jpeg" alt="Rio.coder" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    Full Stack Developer<br>
+                    <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
+                        <a href="https://github.com/riocoder7" style="margin: 0 5px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" style="width: 24px; height: 24px;">
+                        </a>
+                        <a href="https://in.linkedin.com/in/rio-coder-2a662823b" style="margin: 0 5px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 24px; height: 24px;">
+                        </a>
+                        <a href="https://www.instagram.com/rio.coder" style="margin: 0 5px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" style="width: 24px; height: 24px;">
+                        </a>
+                    </div>
+                </p>
+            </div>
+        </div>  
+        <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <p>&copy; 2024-2025 Racking Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var notification = document.getElementById('notification');
+
+            // Name validation
+            if (name.length <= 5 || /\d/.test(name)) {
+                notification.textContent = 'Name must be more than 5 characters and should not contain numbers.';
+                notification.style.backgroundColor = '#FF0000';
+                notification.style.display = 'block';
+                return;
+            }
+
+            // Email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                notification.textContent = 'Please enter a valid email address.';
+                notification.style.backgroundColor = '#FF0000';
+                notification.style.display = 'block';
+                return;
+            }
+
+            // Message validation
+            if (message.length > 500) {
+                notification.textContent = 'Message should not exceed 500 characters.';
+                notification.style.backgroundColor = '#FF0000';
+                notification.style.display = 'block';
+                return;
+            }
+
+            // If all validations pass
+            notification.textContent = 'Message sent successfully!';
+            notification.style.backgroundColor = '#4CAF50';
+            notification.style.display = 'block';
+            
+            // Reset form
+            document.getElementById('contact-form').reset();
+
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        function toggleMenu() {
+            navMenu.style.display = navMenu.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                menuToggle.style.display = 'block';
+                navMenu.style.display = 'none';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.width = '100%';
+            } else {
+                menuToggle.style.display = 'none';
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'row';
+                navMenu.style.width = 'auto';
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    </script>
+</body>
+</html>
